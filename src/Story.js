@@ -154,15 +154,14 @@ export const Story = (props: Props) => {
 			<Modal
 				style={{
 					flex: 1,
-					height: Dimensions.get("window").height,
-					width: Dimensions.get("window").width,
+					height: "100%",
+					width: "100%",
 				}}
 				isOpen={isModalOpen}
 				onClosed={() => setIsModalOpen(false)}
 				position='center'
 				swipeToClose
 				swipeArea={250}
-				backButtonClose
 				coverScreen={true}
 			>
 				{renderCube()}
