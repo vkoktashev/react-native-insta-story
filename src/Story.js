@@ -160,6 +160,7 @@ export const Story = (props: Props) => {
 				backButtonClose
 				coverScreen={true}
 			>
+				<StatusBar backgroundColor={"rgba(0,0,0,0.9)"} />
 				{renderCube()}
 			</Modal>
 		</Fragment>
