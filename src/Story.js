@@ -152,6 +152,7 @@ export const Story = (props: Props) => {
 				/>
 			</View>
 			<Modal
+				style={{ height: "100%", backgroundColor: "black" }}
 				isOpen={isModalOpen}
 				onClosed={() => setIsModalOpen(false)}
 				position='center'
