@@ -1,5 +1,5 @@
 import React, { Fragment, useRef, useState } from "react";
-import { LogBox, Dimensions, View, Platform } from "react-native";
+import { LogBox, Dimensions, View, Platform, StatusBar } from "react-native";
 import Modal from "react-native-modalbox";
 import StoryListItem from "./StoryListItem";
 import StoryCircleListView from "./StoryCircleListView";
