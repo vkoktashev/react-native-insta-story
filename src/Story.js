@@ -35,7 +35,7 @@ export const Story = (props: Props) => {
 		onClose,
 		duration,
 		swipeText,
-		customSwipeUpComponent,
+		slideContent,
 		customCloseComponent,
 		avatarSize,
 	} = props;
@@ -97,7 +97,7 @@ export const Story = (props: Props) => {
 					currentPage={currentPage}
 					onFinish={onStoryFinish}
 					swipeText={swipeText}
-					customSwipeUpComponent={customSwipeUpComponent}
+					slideContent={slideContent}
 					customCloseComponent={customCloseComponent}
 					onClosePress={() => {
 						setIsModalOpen(false);

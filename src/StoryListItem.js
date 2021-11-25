@@ -27,7 +27,7 @@ type Props = {
 	onClosePress: function,
 	key: number,
 	swipeText?: string,
-	customSwipeUpComponent?: any,
+	slideContent?: any,
 	customCloseComponent?: any,
 	customHeaderComponent?: any,
 	stories: IUserStoryItem[],
@@ -268,7 +268,7 @@ export const StoryListItem = (props: Props) => {
 				</View>
 			</View>
 			{props.slideContent ? (
-				<props.customSwipeUpComponent onSwipeUp={onSwipeUp} {...props} />
+				<props.slideContent onSwipeUp={onSwipeUp} {...props} />
 			) : null}
 		</GestureRecognizer>
 	);
