@@ -161,6 +161,9 @@ export const StoryListItem = (props: Props) => {
 
 	function renderHeader() {
 		if (typeof props.customHeaderComponent !== "undefined") {
+			if (!props.customHeaderComponent) {
+				return null;
+			}
 			return <props.customHeaderComponent {...props} />;
 		}
 		return (
