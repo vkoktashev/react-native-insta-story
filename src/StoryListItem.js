@@ -267,21 +267,9 @@ export const StoryListItem = (props: Props) => {
 					</TouchableWithoutFeedback>
 				</View>
 			</View>
-			{content[current].onPress &&
-				(props.customSwipeUpComponent ? (
-					props.customSwipeUpComponent
-				) : (
-					<TouchableOpacity
-						activeOpacity={1}
-						onPress={onSwipeUp}
-						style={styles.swipeUpBtn}
-					>
-						<Text style={{ color: "white", marginTop: 5 }}></Text>
-						<Text style={{ color: "white", marginTop: 5 }}>
-							{props.swipeText ?? "Swipe Up"}
-						</Text>
-					</TouchableOpacity>
-				))}
+			{props.slideContent ? (
+				<props.customSwipeUpComponent onSwipeUp={onSwipeUp} {...props} />
+			) : null}
 		</GestureRecognizer>
 	);
 };
