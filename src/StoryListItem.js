@@ -41,8 +41,7 @@ export const StoryListItem = (props: Props) => {
 	const [content, setContent] = useState(
 		stories.map((x) => {
 			return {
-				image: x.story_image,
-				onPress: x.onPress,
+				...x,
 				finish: 0,
 			};
 		})
