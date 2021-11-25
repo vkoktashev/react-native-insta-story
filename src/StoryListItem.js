@@ -30,6 +30,7 @@ type Props = {
 	slideContent?: any,
 	customCloseComponent?: any,
 	customHeaderComponent?: any,
+	customBackground?: any,
 	stories: IUserStoryItem[],
 };
 
