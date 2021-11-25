@@ -268,7 +268,10 @@ export const StoryListItem = (props: Props) => {
 				</View>
 			</View>
 			{props.slideContent ? (
-				<props.slideContent onSwipeUp={onSwipeUp} {...props} />
+				<props.slideContent
+					onSwipeUp={onSwipeUp}
+					storyInfo={content[current]}
+				/>
 			) : null}
 		</GestureRecognizer>
 	);
