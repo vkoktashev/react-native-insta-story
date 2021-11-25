@@ -88,6 +88,7 @@ export const Story = (props: Props) => {
 		selectedData.map((x, i) => {
 			return (
 				<StoryListItem
+					customHeaderComponent={props.customHeaderComponent}
 					duration={duration * 1000}
 					key={i}
 					profileName={x.user_name}
@@ -105,6 +106,7 @@ export const Story = (props: Props) => {
 						}
 					}}
 					index={i}
+					header
 				/>
 			);
 		});
@@ -161,7 +163,10 @@ export const Story = (props: Props) => {
 				backButtonClose
 				coverScreen={true}
 			>
-				<StatusBar backgroundColor={"rgba(0,0,0,0.9)"} />
+				<StatusBar
+					backgroundColor={"rgba(0,0,0,0.9)"}
+					barStyle={"light-content"}
+				/>
 				{renderCube()}
 			</Modal>
 		</Fragment>
