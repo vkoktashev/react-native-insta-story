@@ -29,6 +29,7 @@ type Props = {
 	swipeText?: string,
 	customSwipeUpComponent?: any,
 	customCloseComponent?: any,
+	customHeaderComponent?: any,
 	stories: IUserStoryItem[],
 };
 
@@ -266,24 +267,21 @@ export const StoryListItem = (props: Props) => {
 					</TouchableWithoutFeedback>
 				</View>
 			</View>
-			{content[current].onPress && (
-				<TouchableOpacity
-					activeOpacity={1}
-					onPress={onSwipeUp}
-					style={styles.swipeUpBtn}
-				>
-					{props.customSwipeUpComponent ? (
-						props.customSwipeUpComponent
-					) : (
-						<>
-							<Text style={{ color: "white", marginTop: 5 }}></Text>
-							<Text style={{ color: "white", marginTop: 5 }}>
-								{props.swipeText ?? "Swipe Up"}
-							</Text>
-						</>
-					)}
-				</TouchableOpacity>
-			)}
+			{content[current].onPress &&
+				(props.customSwipeUpComponent ? (
+					props.customSwipeUpComponent
+				) : (
+					<TouchableOpacity
+						activeOpacity={1}
+						onPress={onSwipeUp}
+						style={styles.swipeUpBtn}
+					>
+						<Text style={{ color: "white", marginTop: 5 }}></Text>
+						<Text style={{ color: "white", marginTop: 5 }}>
+							{props.swipeText ?? "Swipe Up"}
+						</Text>
+					</TouchableOpacity>
+				))}
 		</GestureRecognizer>
 	);
 };
