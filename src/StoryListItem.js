@@ -41,6 +41,7 @@ export const StoryListItem = (props: Props) => {
 	const [content, setContent] = useState(
 		stories.map((x) => {
 			return {
+				backgroundColors: x.backgroundColors,
 				text: x.story_text,
 				image: x.story_image,
 				onPress: x.onPress,
@@ -207,11 +208,19 @@ export const StoryListItem = (props: Props) => {
 			}}
 		>
 			<View style={styles.backgroundContainer}>
-				<Image
-					onLoadEnd={() => start()}
-					source={{ uri: content[current].image }}
-					style={styles.image}
-				/>
+				{props.customBackground ? (
+					<props.customBackground
+						colors={content[current].backgroundColors}
+						image={content[current].image}
+						onLoadEnd={() => start()}
+					/>
+				) : (
+					<Image
+						onLoadEnd={() => start()}
+						source={{ uri: content[current].image }}
+						style={styles.image}
+					/>
+				)}
 				{load && (
 					<View style={styles.spinnerContainer}>
 						<ActivityIndicator size='large' color={"white"} />

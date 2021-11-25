@@ -89,6 +89,7 @@ export const Story = (props: Props) => {
 			return (
 				<StoryListItem
 					customHeaderComponent={props.customHeaderComponent}
+					customBackground={props.customBackground}
 					duration={duration * 1000}
 					key={i}
 					profileName={x.user_name}
