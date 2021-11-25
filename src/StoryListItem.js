@@ -43,6 +43,7 @@ export const StoryListItem = (props: Props) => {
 		stories.map((x) => {
 			return {
 				backgroundColors: x.backgroundColors,
+				button: x.button,
 				text: x.story_text,
 				image: x.story_image,
 				onPress: x.onPress,
