@@ -42,6 +42,7 @@ export const StoryListItem = (props: Props) => {
 	const [content, setContent] = useState(
 		stories.map((x) => {
 			return {
+				id: x.story_id,
 				backgroundColors: x.backgroundColors,
 				button: x.button,
 				text: x.story_text,
