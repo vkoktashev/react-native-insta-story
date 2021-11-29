@@ -245,6 +245,12 @@ export const StoryListItem = (props: Props) => {
 					})}
 				</View>
 				{renderHeader()}
+				{props.slideContent ? (
+					<props.slideContent
+						onSwipeUp={onSwipeUp}
+						storyInfo={content[current]}
+					/>
+				) : null}
 				<View style={styles.pressContainer}>
 					<TouchableWithoutFeedback
 						onPressIn={() => progress.stopAnimation()}
@@ -278,12 +284,6 @@ export const StoryListItem = (props: Props) => {
 					</TouchableWithoutFeedback>
 				</View>
 			</View>
-			{props.slideContent ? (
-				<props.slideContent
-					onSwipeUp={onSwipeUp}
-					storyInfo={content[current]}
-				/>
-			) : null}
 		</GestureRecognizer>
 	);
 };
@@ -361,6 +361,7 @@ const styles = StyleSheet.create({
 	pressContainer: {
 		flex: 1,
 		flexDirection: "row",
+		marginBottom: (Platform.OS === "ios" ? 20 : 50) + 60,
 	},
 	swipeUpBtn: {
 		position: "absolute",
